@@ -60,7 +60,9 @@ def register_view(request):
     return render(request, 'registerpage.html')
 
 
+from django.views.decorators.csrf import csrf_protect
 # Login View
+@csrf_protect
 def login_view(request):
     if request.method == "POST":
         username = request.POST['username']
